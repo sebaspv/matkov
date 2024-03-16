@@ -8,6 +8,7 @@ pygame = "*"
 gridworld = {git = "git+https://github.com/hpharmsen/gridworld"}
 numpy = "*"
 tensorboardx = "*"
+pynvim = "*"
 
 [dev-packages]
 tensorboard = "*"
