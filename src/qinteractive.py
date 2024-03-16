@@ -26,7 +26,7 @@ x = 0
 y = 0
 
 grid = Grid(
-    maxx, maxy, GRID_SIZE[0], GRID_SIZE[1], title="Gridworld", margin=1, framerate=20
+    maxx, maxy, GRID_SIZE[0], GRID_SIZE[1], title="Gridworld", margin=1, framerate=2
 )
 
 grid.update_automatic = True
@@ -86,6 +86,7 @@ def step(action):
     return (x, y), reward, done
 
 
+grid.set_drawaction("O", draw_car)
 episodes = 20001
 
 learning_rate_a = 0.9  # alpha/learning rate
@@ -123,7 +124,7 @@ for i in range(episodes):
             - q[state][action]
         )
         state = new_state
-        time.sleep(1/20)
+        time.sleep(1/2)
     for k in range(maxx):
         for j in range(maxy):
             grid[k, j] = ""
